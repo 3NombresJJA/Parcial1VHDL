@@ -1,0 +1,37 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity Cronometro is 
+port(clk:in std_logic;
+	
+	d:out std_logic_vector(6 downto 0);
+end Cronometro;
+architecture arch of Cronometro is 	
+signal aux1: integer in range 0 to 120;
+begin 
+pseq:process(clk) is 
+begin 
+	if clk'event and clk='1' then 
+			aux1<=aux1+1;
+	end if;
+	
+end process;
+Tiempo : process(aux1)
+
+begin
+ SegUni<=SegUni+1;
+	if (SegUni=10) then
+		SegDec<=SegDec+1;
+		SegUni<=0;
+		if (SegDec=6) then
+			MinUni<=MinUni+1;
+			SegDec<=0;
+			if (MinUni=10) then
+				MinUni<=0;
+				SegDec<=0;
+				SegUni<=0;
+			end if;
+		end if;
+	end if;
+end process;

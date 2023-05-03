@@ -1,0 +1,107 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+# Date created = 15:16:04  April 23, 2023
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		ParcialV1_4_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C16F484C6
+set_global_assignment -name TOP_LEVEL_ENTITY ParcialV1_4
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:16:04  APRIL 23, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "D:/Documentos/DocumentosU/VHDL/ParcialVfinal/ParcialV1.4/simulation/qsim/" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_B12 -to Clk
+set_location_assignment PIN_J6 -to Entrada[0]
+set_location_assignment PIN_H5 -to Entrada[1]
+set_location_assignment PIN_H6 -to Entrada[2]
+set_location_assignment PIN_G4 -to Entrada[3]
+set_location_assignment PIN_G5 -to Entrada[4]
+set_location_assignment PIN_J7 -to Entrada[5]
+set_location_assignment PIN_H7 -to Entrada[6]
+set_location_assignment PIN_E3 -to Entrada[7]
+set_location_assignment PIN_J1 -to Felicitacion
+set_location_assignment PIN_F14 -to SalMinUNi[0]
+set_location_assignment PIN_B17 -to SalMinUNi[1]
+set_location_assignment PIN_A17 -to SalMinUNi[2]
+set_location_assignment PIN_E15 -to SalMinUNi[3]
+set_location_assignment PIN_B16 -to SalMinUNi[4]
+set_location_assignment PIN_A16 -to SalMinUNi[5]
+set_location_assignment PIN_D15 -to SalMinUNi[6]
+set_location_assignment PIN_A15 -to SalSegDec[0]
+set_location_assignment PIN_E14 -to SalSegDec[1]
+set_location_assignment PIN_B14 -to SalSegDec[2]
+set_location_assignment PIN_A14 -to SalSegDec[3]
+set_location_assignment PIN_C13 -to SalSegDec[4]
+set_location_assignment PIN_B13 -to SalSegDec[5]
+set_location_assignment PIN_A13 -to SalSegDec[6]
+set_location_assignment PIN_F13 -to SalSegUni[0]
+set_location_assignment PIN_F12 -to SalSegUni[1]
+set_location_assignment PIN_G12 -to SalSegUni[2]
+set_location_assignment PIN_H13 -to SalSegUni[3]
+set_location_assignment PIN_H12 -to SalSegUni[4]
+set_location_assignment PIN_F11 -to SalSegUni[5]
+set_location_assignment PIN_E11 -to SalSegUni[6]
+set_location_assignment PIN_G15 -to SalidaNum[0]
+set_location_assignment PIN_D19 -to SalidaNum[1]
+set_location_assignment PIN_C19 -to SalidaNum[2]
+set_location_assignment PIN_B19 -to SalidaNum[3]
+set_location_assignment PIN_A19 -to SalidaNum[4]
+set_location_assignment PIN_F15 -to SalidaNum[5]
+set_location_assignment PIN_B18 -to SalidaNum[6]
+set_global_assignment -name VHDL_FILE ../ParteParcial6/ParqueaderoUnitario.vhd
+set_global_assignment -name VHDL_FILE ../Parte5/DivFreq.vhd
+set_global_assignment -name VHDL_FILE ../PartesParcial4/Bcd7seg3bits.vhd
+set_global_assignment -name VHDL_FILE ../PartesParcial3/BCD7Seg.vhd
+set_global_assignment -name VHDL_FILE ../Partesparcial2/ContadorenReversa.vhd
+set_global_assignment -name VHDL_FILE ../parquedero/Parcial/Parqueadero.vhd
+set_global_assignment -name VHDL_FILE ParcialV1_4.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,0 +1,1138 @@
+Analysis & Synthesis report for ParcialV1_4
+Tue Apr 25 00:00:39 2023
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "ParqueaderoUnitario:Puesto1|Parqueadero:Paso2"
+ 14. Port Connectivity Checks: "ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1"
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Apr 25 00:00:39 2023      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; ParcialV1_4                                ;
+; Top-level Entity Name              ; ParcialV1_4                                ;
+; Family                             ; Cyclone III                                ;
+; Total logic elements               ; 12                                         ;
+;     Total combinational functions  ; 12                                         ;
+;     Dedicated logic registers      ; 0                                          ;
+; Total registers                    ; 0                                          ;
+; Total pins                         ; 40                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; ParcialV1_4        ; ParcialV1_4        ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++------------------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path         ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                       ; Library ;
++------------------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; ../ParteParcial6/ParqueaderoUnitario.vhd ; yes             ; User VHDL File  ; D:/Documentos/DocumentosU/VHDL/ParcialVfinal/ParteParcial6/ParqueaderoUnitario.vhd ;         ;
+; ../Parte5/DivFreq.vhd                    ; yes             ; User VHDL File  ; D:/Documentos/DocumentosU/VHDL/ParcialVfinal/Parte5/DivFreq.vhd                    ;         ;
+; ../PartesParcial4/Bcd7seg3bits.vhd       ; yes             ; User VHDL File  ; D:/Documentos/DocumentosU/VHDL/ParcialVfinal/PartesParcial4/Bcd7seg3bits.vhd       ;         ;
+; ../PartesParcial3/BCD7Seg.vhd            ; yes             ; User VHDL File  ; D:/Documentos/DocumentosU/VHDL/ParcialVfinal/PartesParcial3/BCD7Seg.vhd            ;         ;
+; ../Partesparcial2/ContadorenReversa.vhd  ; yes             ; User VHDL File  ; D:/Documentos/DocumentosU/VHDL/ParcialVfinal/Partesparcial2/ContadorenReversa.vhd  ;         ;
+; ../parquedero/Parcial/Parqueadero.vhd    ; yes             ; User VHDL File  ; D:/Documentos/DocumentosU/VHDL/ParcialVfinal/parquedero/Parcial/Parqueadero.vhd    ;         ;
+; ParcialV1_4.vhd                          ; yes             ; User VHDL File  ; D:/Documentos/DocumentosU/VHDL/ParcialVfinal/ParcialV1.4/ParcialV1_4.vhd           ;         ;
++------------------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 12         ;
+;                                             ;            ;
+; Total combinational functions               ; 12         ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 1          ;
+;     -- 3 input functions                    ; 9          ;
+;     -- <=2 input functions                  ; 2          ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 12         ;
+;     -- arithmetic mode                      ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 0          ;
+;     -- Dedicated logic registers            ; 0          ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 40         ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+; Maximum fan-out node                        ; Muestra[1] ;
+; Maximum fan-out                             ; 10         ;
+; Total fan-out                               ; 82         ;
+; Average fan-out                             ; 0.89       ;
++---------------------------------------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |ParcialV1_4               ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 40   ; 0            ; |ParcialV1_4        ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                          ;
++------------------------------------------------------------------+------------------------------------------------------------------+------------------------+
+; Latch Name                                                       ; Latch Enable Signal                                              ; Free of Timing Hazards ;
++------------------------------------------------------------------+------------------------------------------------------------------+------------------------+
+; Muestra[0]                                                       ; Aumento                                                          ; yes                    ;
+; Muestra[1]                                                       ; Aumento                                                          ; yes                    ;
+; Muestra[2]                                                       ; Aumento                                                          ; yes                    ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|RTCsegDec[1] ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|RTCsegDec[1] ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|RTCsegDec[1] ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|RTCsegDec[1] ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|RTCsegDec[1] ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|RTCsegDec[1] ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|RTCsegDec[1] ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|RTCsegDec[1] ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|RTCsegDec[0] ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|RTCsegDec[0] ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|RTCsegDec[0] ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|RTCsegDec[0] ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|RTCsegDec[0] ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|RTCsegDec[0] ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|RTCsegDec[0] ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|RTCsegDec[0] ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|RTCsegUni[1] ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|RTCsegUni[1] ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|RTCsegUni[1] ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|RTCsegUni[1] ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|RTCsegUni[1] ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|RTCsegUni[1] ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|RTCsegUni[1] ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|RTCsegUni[1] ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|RTCsegUni[2] ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|RTCsegUni[2] ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|RTCsegUni[2] ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|RTCsegUni[2] ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|RTCsegUni[2] ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|RTCsegUni[2] ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|RTCsegUni[2] ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|RTCsegUni[2] ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|RTCsegUni[3] ; yes                    ;
+; Number of user-specified and inferred latches = 35               ;                                                                  ;                        ;
++------------------------------------------------------------------+------------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                             ;
++----------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+; Register name                                                                    ; Reason for Removal                                                          ;
++----------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+; DivFreq:Paso0|out2                                                               ; Stuck at GND due to stuck port clear                                        ;
+; DivFreq:Paso0|\ContadorSeg:count2[0..24]                                         ; Stuck at GND due to stuck port clock_enable                                 ;
+; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCsegUni[0]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|SegUni[1..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|SegDec[0..2]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|MinUni[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCMin[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCsegDec[0..2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCsegUni[1..3]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[0..24] ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[2..4]               ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|alarma_activa                ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegUni[0,3]                  ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegDec[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCsegUni[0]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|SegUni[1..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|SegDec[0..2]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|MinUni[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCMin[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCsegDec[0..2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCsegUni[1..3]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[0..24] ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[2..4]               ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|alarma_activa                ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegUni[0,3]                  ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegDec[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCsegUni[0]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|SegUni[1..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|SegDec[0..2]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|MinUni[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCMin[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCsegDec[0..2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCsegUni[1..3]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[0..24] ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[2..4]               ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|alarma_activa                ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegUni[0,3]                  ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegDec[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCsegUni[0]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|SegUni[1..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|SegDec[0..2]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|MinUni[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCMin[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCsegDec[0..2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCsegUni[1..3]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[0..24] ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[2..4]               ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|alarma_activa                ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegUni[0,3]                  ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegDec[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCsegUni[0]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|SegUni[1..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|SegDec[0..2]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|MinUni[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCMin[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCsegDec[0..2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCsegUni[1..3]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[0..24] ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[2..4]               ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|alarma_activa                ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegUni[0,3]                  ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegDec[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCsegUni[0]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|SegUni[1..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|SegDec[0..2]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|MinUni[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCMin[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCsegDec[0..2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCsegUni[1..3]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[0..24] ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[2..4]               ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|alarma_activa                ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegUni[0,3]                  ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegDec[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCsegUni[0]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|SegUni[1..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|SegDec[0..2]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|MinUni[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCMin[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCsegDec[0..2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCsegUni[1..3]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[0..24] ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[2..4]               ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|alarma_activa                ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegUni[0,3]                  ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegDec[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCsegUni[0]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|SegUni[1..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|SegDec[0..2]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|MinUni[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCMin[0..3]                       ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCsegDec[0..2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCsegUni[1..3]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[0..24] ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[2..4]               ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|alarma_activa                ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegUni[0,3]                  ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegDec[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|SegUni[0]                          ; Stuck at VCC due to stuck port preset                                       ;
+; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|SegUni[0]                          ; Stuck at VCC due to stuck port preset                                       ;
+; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|SegUni[0]                          ; Stuck at VCC due to stuck port preset                                       ;
+; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|SegUni[0]                          ; Stuck at VCC due to stuck port preset                                       ;
+; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|SegUni[0]                          ; Stuck at VCC due to stuck port preset                                       ;
+; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|SegUni[0]                          ; Stuck at VCC due to stuck port preset                                       ;
+; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|SegUni[0]                          ; Stuck at VCC due to stuck port preset                                       ;
+; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|SegUni[0]                          ; Stuck at VCC due to stuck port preset                                       ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegDec[0]                    ; Merged with ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[0] ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegDec[0]                    ; Merged with ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[0] ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegDec[0]                    ; Merged with ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[0] ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegDec[0]                    ; Merged with ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[0] ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegDec[0]                    ; Merged with ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[0] ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegDec[0]                    ; Merged with ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[0] ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegDec[0]                    ; Merged with ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[0] ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegDec[0]                    ; Merged with ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[0] ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegDec[1]                    ; Merged with ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[1] ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegDec[1]                    ; Merged with ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[1] ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegDec[1]                    ; Merged with ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[1] ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegDec[1]                    ; Merged with ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[1] ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegDec[1]                    ; Merged with ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[1] ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegDec[1]                    ; Merged with ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[1] ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegDec[1]                    ; Merged with ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[1] ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegDec[1]                    ; Merged with ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[1] ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[0,1,5]              ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[0,1,5]              ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[0,1,5]              ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[0,1,5]              ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[0,1,5]              ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[0,1,5]              ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[0,1,5]              ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[0,1,5]              ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegUni[1]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegUni[1]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegUni[1]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegUni[1]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegUni[1]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegUni[1]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegUni[1]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegUni[1]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegUni[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegUni[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegUni[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegUni[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegUni[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegUni[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegUni[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegUni[2]                    ; Stuck at GND due to stuck port clock                                        ;
+; Total Number of Removed Registers = 514                                          ;                                                                             ;
++----------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                   ;
++--------------------+-------------------------+--------------------------------------------------------------------------------+
+; Register name      ; Reason for Removal      ; Registers Removed due to This Register                                         ;
++--------------------+-------------------------+--------------------------------------------------------------------------------+
+; DivFreq:Paso0|out2 ; Stuck at GND            ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCsegUni[0],                    ;
+;                    ; due to stuck port clear ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|SegUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|SegUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|SegUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|SegDec[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|SegDec[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|SegDec[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|MinUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|MinUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|MinUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|MinUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCMin[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCMin[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCMin[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCMin[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCsegDec[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCsegDec[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCsegDec[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCsegUni[3],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCsegUni[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|RTCsegUni[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[24], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[23], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[22], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[21], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[20], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[19], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[18], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[17], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[16], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[15], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[14], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[13], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[12], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[11], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[10], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[9],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[8],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[7],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[6],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[5],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[4],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[3],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[2],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[1],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|\contar_tiempo:count2[0],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[4],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[3],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[2],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|alarma_activa,             ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegUni[3],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegUni[0],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegDec[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCsegUni[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|SegUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|SegUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|SegUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|SegDec[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|SegDec[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|SegDec[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|MinUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|MinUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|MinUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|MinUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCMin[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCMin[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCMin[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCMin[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCsegDec[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCsegDec[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCsegDec[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCsegUni[3],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCsegUni[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|RTCsegUni[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[24], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[23], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[22], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[21], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[20], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[19], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[18], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[17], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[16], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[15], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[14], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[13], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[12], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[11], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[10], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[9],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[8],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[7],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[6],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[5],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[4],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[3],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[2],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[1],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|\contar_tiempo:count2[0],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[4],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[3],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[2],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|alarma_activa,             ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegUni[3],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegUni[0],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegDec[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCsegUni[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|SegUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|SegUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|SegUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|SegDec[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|SegDec[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|SegDec[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|MinUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|MinUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|MinUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|MinUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCMin[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCMin[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCMin[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCMin[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCsegDec[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCsegDec[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCsegDec[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCsegUni[3],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCsegUni[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|RTCsegUni[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[24], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[23], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[22], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[21], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[20], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[19], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[18], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[17], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[16], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[15], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[14], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[13], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[12], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[11], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[10], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[9],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[8],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[7],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[6],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[5],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[4],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[3],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[2],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[1],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|\contar_tiempo:count2[0],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[4],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[3],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[2],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|alarma_activa,             ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegUni[3],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegUni[0],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegDec[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCsegUni[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|SegUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|SegUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|SegUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|SegDec[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|SegDec[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|SegDec[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|MinUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|MinUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|MinUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|MinUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCMin[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCMin[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCMin[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCMin[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCsegDec[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCsegDec[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCsegDec[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCsegUni[3],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCsegUni[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|RTCsegUni[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[24], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[23], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[22], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[21], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[20], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[19], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[18], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[17], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[16], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[15], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[14], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[13], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[12], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[11], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[10], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[9],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[8],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[7],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[6],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[5],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[4],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[3],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[2],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[1],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|\contar_tiempo:count2[0],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[4],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[3],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[2],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|alarma_activa,             ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegUni[3],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegUni[0],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegDec[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCsegUni[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|SegUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|SegUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|SegUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|SegDec[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|SegDec[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|SegDec[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|MinUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|MinUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|MinUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|MinUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCMin[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCMin[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCMin[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCMin[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCsegDec[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCsegDec[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCsegDec[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCsegUni[3],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCsegUni[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|RTCsegUni[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[24], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[23], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[22], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[21], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[20], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[19], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[18], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[17], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[16], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[15], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[14], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[13], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[12], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[11], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[10], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[9],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[8],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[7],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[6],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[5],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[4],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[3],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[2],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[1],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|\contar_tiempo:count2[0],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[4],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[3],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[2],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|alarma_activa,             ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegUni[3],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegUni[0],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegDec[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCsegUni[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|SegUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|SegUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|SegUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|SegDec[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|SegDec[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|SegDec[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|MinUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|MinUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|MinUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|MinUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCMin[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCMin[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCMin[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCMin[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCsegDec[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCsegDec[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCsegDec[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCsegUni[3],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCsegUni[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|RTCsegUni[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[24], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[23], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[22], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[21], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[20], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[19], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[18], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[17], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[16], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[15], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[14], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[13], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[12], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[11], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[10], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[9],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[8],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[7],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[6],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[5],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[4],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[3],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[2],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[1],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|\contar_tiempo:count2[0],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[4],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[3],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[2],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|alarma_activa,             ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegUni[3],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegUni[0],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegDec[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCsegUni[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|SegUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|SegUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|SegUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|SegDec[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|SegDec[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|SegDec[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|MinUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|MinUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|MinUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|MinUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCMin[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCMin[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCMin[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCMin[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCsegDec[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCsegDec[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCsegDec[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCsegUni[3],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCsegUni[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|RTCsegUni[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[24], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[23], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[22], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[21], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[20], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[19], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[18], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[17], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[16], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[15], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[14], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[13], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[12], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[11], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[10], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[9],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[8],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[7],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[6],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[5],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[4],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[3],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[2],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[1],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|\contar_tiempo:count2[0],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[4],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[3],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[2],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|alarma_activa,             ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegUni[3],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegUni[0],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegDec[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCsegUni[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|SegUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|SegUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|SegUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|SegDec[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|SegDec[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|SegDec[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|MinUni[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|MinUni[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|MinUni[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|MinUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCMin[3],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCMin[2],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCMin[1],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCMin[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCsegDec[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCsegDec[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCsegDec[0],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCsegUni[3],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCsegUni[2],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|RTCsegUni[1],                    ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[24], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[23], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[22], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[21], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[20], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[19], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[18], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[17], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[16], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[15], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[14], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[13], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[12], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[11], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[10], ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[9],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[8],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[7],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[6],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[5],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[4],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[3],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[2],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[1],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|\contar_tiempo:count2[0],  ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[4],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[3],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[2],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|alarma_activa,             ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegUni[3],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegUni[0],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegDec[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|Parqueadero:Paso2|SegUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|Parqueadero:Paso2|SegUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|Parqueadero:Paso2|SegUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|Parqueadero:Paso2|SegUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|Parqueadero:Paso2|SegUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|Parqueadero:Paso2|SegUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|Parqueadero:Paso2|SegUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|Parqueadero:Paso2|SegUni[0],                       ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[1],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[5],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[0],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[1],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[5],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[0],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[1],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[5],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[0],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[1],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[5],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[0],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[1],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[5],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[0],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[1],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[5],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[0],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[1],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[5],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[0],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[1],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[5],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[0],               ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegUni[1],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegUni[1],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegUni[1],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegUni[1],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegUni[1],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegUni[1],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegUni[1],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegUni[1],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegUni[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegUni[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegUni[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegUni[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegUni[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegUni[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegUni[2],                 ;
+;                    ;                         ; ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegUni[2]                  ;
++--------------------+-------------------------+--------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |ParcialV1_4|Mux12         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ParqueaderoUnitario:Puesto1|Parqueadero:Paso2"                                           ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; selargo   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; contador2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1"                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Tue Apr 25 00:00:38 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ParcialV1_4 -c ParcialV1_4
+Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file /documentos/documentosu/vhdl/parcialvfinal/parteparcial6/parqueaderounitario.vhd
+    Info (12022): Found design unit 1: ParqueaderoUnitario-Estesi
+    Info (12023): Found entity 1: ParqueaderoUnitario
+Info (12021): Found 2 design units, including 1 entities, in source file /documentos/documentosu/vhdl/parcialvfinal/parte5/divfreq.vhd
+    Info (12022): Found design unit 1: DivFreq-Parque
+    Info (12023): Found entity 1: DivFreq
+Info (12021): Found 2 design units, including 1 entities, in source file /documentos/documentosu/vhdl/parcialvfinal/partesparcial4/bcd7seg3bits.vhd
+    Info (12022): Found design unit 1: BCD7seg3bits-Arquitecto
+    Info (12023): Found entity 1: BCD7seg3bits
+Info (12021): Found 2 design units, including 1 entities, in source file /documentos/documentosu/vhdl/parcialvfinal/partesparcial3/bcd7seg.vhd
+    Info (12022): Found design unit 1: BCD7seg-Arquitecto
+    Info (12023): Found entity 1: BCD7seg
+Info (12021): Found 2 design units, including 1 entities, in source file /documentos/documentosu/vhdl/parcialvfinal/partesparcial2/contadorenreversa.vhd
+    Info (12022): Found design unit 1: ContadorenReversa-b
+    Info (12023): Found entity 1: ContadorenReversa
+Info (12021): Found 2 design units, including 1 entities, in source file /documentos/documentosu/vhdl/parcialvfinal/parquedero/parcial/parqueadero.vhd
+    Info (12022): Found design unit 1: Parqueadero-Parque
+    Info (12023): Found entity 1: Parqueadero
+Info (12021): Found 2 design units, including 1 entities, in source file parcialv1_4.vhd
+    Info (12022): Found design unit 1: parcialV1_4-FuncionaPorFavor
+    Info (12023): Found entity 1: ParcialV1_4
+Info (12127): Elaborating entity "ParcialV1_4" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at ParcialV1_4.vhd(51): used implicit default value for signal "prueba1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10492): VHDL Process Statement warning at ParcialV1_4.vhd(130): signal "Muestra" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ParcialV1_4.vhd(132): signal "Muestra" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ParcialV1_4.vhd(127): inferring latch(es) for signal or variable "Muestra", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "Muestra[0]" at ParcialV1_4.vhd(127)
+Info (10041): Inferred latch for "Muestra[1]" at ParcialV1_4.vhd(127)
+Info (10041): Inferred latch for "Muestra[2]" at ParcialV1_4.vhd(127)
+Info (12128): Elaborating entity "DivFreq" for hierarchy "DivFreq:Paso0"
+Warning (10492): VHDL Process Statement warning at DivFreq.vhd(19): signal "Sigue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "ParqueaderoUnitario" for hierarchy "ParqueaderoUnitario:Puesto1"
+Warning (10036): Verilog HDL or VHDL warning at ParqueaderoUnitario.vhd(24): object "contd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at ParqueaderoUnitario.vhd(25): object "Sefue" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at ParqueaderoUnitario.vhd(26): object "Cont2" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at ParqueaderoUnitario.vhd(57): signal "Entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ParqueaderoUnitario.vhd(55): inferring latch(es) for signal or variable "Felicitacion", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "Felicitacion" at ParqueaderoUnitario.vhd(55)
+Info (12128): Elaborating entity "ContadorenReversa" for hierarchy "ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1"
+Warning (10492): VHDL Process Statement warning at ContadorenReversa.vhd(25): signal "carro_en_pq" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ContadorenReversa.vhd(48): signal "carro_en_pq" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ContadorenReversa.vhd(49): signal "alarma_activa" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ContadorenReversa.vhd(46): inferring latch(es) for signal or variable "Felicitacion", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at ContadorenReversa.vhd(56): signal "carro_en_pq" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ContadorenReversa.vhd(58): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ContadorenReversa.vhd(66): signal "SegDec" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ContadorenReversa.vhd(67): signal "SegUni" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ContadorenReversa.vhd(53): inferring latch(es) for signal or variable "RTCsegDec", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ContadorenReversa.vhd(53): inferring latch(es) for signal or variable "RTCsegUni", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "RTCsegUni[0]" at ContadorenReversa.vhd(53)
+Info (10041): Inferred latch for "RTCsegUni[1]" at ContadorenReversa.vhd(53)
+Info (10041): Inferred latch for "RTCsegUni[2]" at ContadorenReversa.vhd(53)
+Info (10041): Inferred latch for "RTCsegUni[3]" at ContadorenReversa.vhd(53)
+Info (10041): Inferred latch for "RTCsegDec[0]" at ContadorenReversa.vhd(53)
+Info (10041): Inferred latch for "RTCsegDec[1]" at ContadorenReversa.vhd(53)
+Info (10041): Inferred latch for "RTCsegDec[2]" at ContadorenReversa.vhd(53)
+Info (10041): Inferred latch for "Felicitacion" at ContadorenReversa.vhd(46)
+Info (12128): Elaborating entity "Parqueadero" for hierarchy "ParqueaderoUnitario:Puesto1|Parqueadero:Paso2"
+Warning (10492): VHDL Process Statement warning at Parqueadero.vhd(27): signal "Sigue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Parqueadero.vhd(57): signal "Sigue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Parqueadero.vhd(58): signal "Clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "BCD7seg" for hierarchy "BCD7seg:Paso1"
+Info (12128): Elaborating entity "BCD7seg3bits" for hierarchy "BCD7seg3bits:Paso2"
+Warning (13012): Latch ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|RTCsegDec[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[1]
+Warning (13012): Latch ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|RTCsegDec[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[1]
+Warning (13012): Latch ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|RTCsegDec[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[1]
+Warning (13012): Latch ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|RTCsegDec[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[1]
+Warning (13012): Latch ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|RTCsegDec[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[1]
+Warning (13012): Latch ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|RTCsegDec[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[1]
+Warning (13012): Latch ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|RTCsegDec[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[1]
+Warning (13012): Latch ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|RTCsegDec[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[1]
+Warning (13012): Latch ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|RTCsegDec[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[0]
+Warning (13012): Latch ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|RTCsegDec[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[0]
+Warning (13012): Latch ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|RTCsegDec[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[0]
+Warning (13012): Latch ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|RTCsegDec[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[0]
+Warning (13012): Latch ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|RTCsegDec[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[0]
+Warning (13012): Latch ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|RTCsegDec[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[0]
+Warning (13012): Latch ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|RTCsegDec[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[0]
+Warning (13012): Latch ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|RTCsegDec[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[0]
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "SalMinUNi[0]" is stuck at VCC
+    Warning (13410): Pin "SalMinUNi[1]" is stuck at GND
+    Warning (13410): Pin "SalMinUNi[2]" is stuck at GND
+    Warning (13410): Pin "SalMinUNi[3]" is stuck at GND
+    Warning (13410): Pin "SalMinUNi[4]" is stuck at GND
+    Warning (13410): Pin "SalMinUNi[5]" is stuck at GND
+    Warning (13410): Pin "SalMinUNi[6]" is stuck at GND
+    Warning (13410): Pin "SalSegDec[5]" is stuck at GND
+    Warning (13410): Pin "Felicitacion" is stuck at VCC
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[5] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|contador[0] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[5] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|contador[0] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[5] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|contador[0] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[5] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|contador[0] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[5] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|contador[0] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[5] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|contador[0] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[5] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|contador[0] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[5] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|contador[0] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegUni[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegUni[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegUni[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegUni[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegUni[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegUni[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegUni[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegUni[1] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto6|ContadorenReversa:Paso1|SegUni[2] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto7|ContadorenReversa:Paso1|SegUni[2] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto5|ContadorenReversa:Paso1|SegUni[2] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto8|ContadorenReversa:Paso1|SegUni[2] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto3|ContadorenReversa:Paso1|SegUni[2] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto2|ContadorenReversa:Paso1|SegUni[2] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto1|ContadorenReversa:Paso1|SegUni[2] will power up to High
+    Critical Warning (18010): Register ParqueaderoUnitario:Puesto4|ContadorenReversa:Paso1|SegUni[2] will power up to High
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Clk"
+    Warning (15610): No output dependent on input pin "Entrada[5]"
+    Warning (15610): No output dependent on input pin "Entrada[6]"
+    Warning (15610): No output dependent on input pin "Entrada[4]"
+    Warning (15610): No output dependent on input pin "Entrada[7]"
+    Warning (15610): No output dependent on input pin "Entrada[2]"
+    Warning (15610): No output dependent on input pin "Entrada[1]"
+    Warning (15610): No output dependent on input pin "Entrada[0]"
+    Warning (15610): No output dependent on input pin "Entrada[3]"
+Info (21057): Implemented 52 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 12 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 116 warnings
+    Info: Peak virtual memory: 4690 megabytes
+    Info: Processing ended: Tue Apr 25 00:00:39 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

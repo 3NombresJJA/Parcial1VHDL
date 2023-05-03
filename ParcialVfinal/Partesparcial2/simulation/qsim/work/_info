@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Documentos\DocumentosU\VHDL\Partesparcial2\simulation\qsim
+vContadorenReversa
+Z1 IIBd_F6lJfzLTJ^zO<_YbH2
+Z2 Vl5S0bOZd3Xe1dn>6CJSlj3
+Z3 dD:\Documentos\DocumentosU\VHDL\Partesparcial2\simulation\qsim
+Z4 w1682288915
+Z5 8ContadorenReversa.vo
+Z6 FContadorenReversa.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|ContadorenReversa.vo|
+Z9 o-work work -O0
+Z10 n@contadoren@reversa
+!i10b 1
+Z11 !s100 zAH[klAIfXBXi>VJa9a9O3
+!s85 0
+Z12 !s108 1682288915.437000
+Z13 !s107 ContadorenReversa.vo|
+!s101 -O0
+vContadorenReversa_vlg_check_tst
+!i10b 1
+Z14 !s100 ZRF]YT>IbIT0eQ5>CHUNk1
+Z15 I3zd56>O@IA:jTDSK9O2eA2
+Z16 VgXRPDC]1mgYlJDjZHg8i<1
+R3
+Z17 w1682288914
+Z18 8Waveform1.vwf.vt
+Z19 FWaveform1.vwf.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z20 !s108 1682288915.583000
+Z21 !s107 Waveform1.vwf.vt|
+Z22 !s90 -work|work|Waveform1.vwf.vt|
+!s101 -O0
+R9
+Z23 n@contadoren@reversa_vlg_check_tst
+vContadorenReversa_vlg_sample_tst
+!i10b 1
+Z24 !s100 K=XQzi6^lJoz]J>aYDD0M1
+Z25 IOJWl^I^ETB14WPA5:;f6^2
+Z26 Vb<j23O5^J<dRlJ?Kl9nRj2
+R3
+R17
+R18
+R19
+L0 29
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z27 n@contadoren@reversa_vlg_sample_tst
+vContadorenReversa_vlg_vec_tst
+!i10b 1
+Z28 !s100 e[1[1Q^N2Z_k^md88_JLK3
+Z29 IGBhk1_TIY3nf6dVR5?;<S1
+Z30 VO2F[9@CaHg3OL0UCImTIb1
+R3
+R17
+R18
+R19
+Z31 L0 412
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z32 n@contadoren@reversa_vlg_vec_tst

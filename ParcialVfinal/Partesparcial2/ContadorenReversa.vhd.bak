@@ -1,0 +1,76 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity beta is
+    port ( clk : in std_logic;
+        carro_en_pq : in std_logic;
+        contador_en_pq : in std_logic;
+        felicitacion : out std_logic);
+end beta;
+
+architecture b of beta is
+
+    -- Definición de constantes
+    constant t_contador : integer := 35; -- Tiempo en segundos que dura el temporizador
+    constant t_felicitacion : integer := 5; -- Tiempo en segundos para la felicitación
+
+    -- Definición de señales internas
+    signal contador : integer range 0 to t_contador * 1000; -- Contador en milisegundos
+    signal lugar_ocupado : std_logic_vector(7 downto 0) := "00000000"; -- Registro de ocupación de los lugares
+    signal alarma_activa : std_logic := '0'; -- Señal de alarma activada
+    signal tiempo_adicional : integer range 0 to t_contador * 1000; -- Tiempo adicional en milisegundos
+
+begin
+
+    -- Proceso para contar el tiempo de ocupación de un lugar
+    contar_tiempo: process (clk)
+    begin
+        if rising_edge(clk) then
+            -- Si llega un carro al parqueadero y hay un lugar libre
+            if carro_en_pq = '1' and lugar_ocupado /= "11111111" then
+                -- Buscar un lugar libre
+                for i in 0 to 7 loop
+                    if lugar_ocupado(i) = '0' then
+                        lugar_ocupado(i) := '1'; -- Marcar el lugar como ocupado
+                        contador(i*32+31 downto i*32) <= t_contador * 1000; -- Inicializar el contador del lugar
+                        alarma_activa <= '0'; -- Desactivar la alarma
+                        tiempo_adicional <= 0; -- Reiniciar el tiempo adicional
+                        exit; -- Salir del bucle
+                    end if;
+                end loop;
+            end if;
+            -- Contar el tiempo si hay algún lugar ocupado
+            if lugar_ocupado /= "00000000" then
+                for i in 0 to 7 loop
+                    if lugar_ocupado(i) = '1' then
+                        if contador(i*32+31 downto i*32) > 0 then
+                            contador(i*32+31 downto i*32) <= contador(i*32+31 downto i*32) - 1;
+                        else
+                            alarma_activa <= '1'; -- Activar la alarma si se acaba el tiempo
+                        end if;
+                    end if;
+                end loop;
+            end if;
+        end if;
+    end process contar_tiempo;
+
+    -- Proceso para verificar si un carro ha salido antes de tiempo
+    verificar_salida: process (contador_en_pq)
+    begin
+        if rising_edge(contador_en_pq) then
+            for i in 0 to 7 loop
+                if lugar_ocupado(i) = '1' then
+                    if contador(i*32+31 downto i*32) > 0 then
+                        -- Si el carro sale antes de tiempo
+                        lugar_ocupado(i) := '0'
+								contador(i32+31 downto i32) := 0 -- reiniciar el contador del lugar
+								felicitacion(i):= contador(i32+31 downto i32) -- almacenar el tiempo para una futura felicitación
+									else
+									felicitacion(i) := 0; -- reiniciar la felicitación si el carro sale después de tiempo
+									end if;
+						end if;
+			end loop;
+		end if;
+end process verificar_salida;
+end architecture b;

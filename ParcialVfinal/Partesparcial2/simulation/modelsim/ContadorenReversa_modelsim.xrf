@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, D:/Documentos/DocumentosU/VHDL/Partesparcial2/ContadorenReversa.vhd
+source_file = 1, D:/Documentos/DocumentosU/VHDL/Partesparcial2/db/ContadorenReversa.cbx.xml
+source_file = 1, d:/quartus/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, d:/quartus/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, d:/quartus/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, d:/quartus/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = ContadorenReversa
+instance = comp, \Felicitacion~output\, Felicitacion~output, ContadorenReversa, 1
+instance = comp, \clk~input\, clk~input, ContadorenReversa, 1
+instance = comp, \carro_en_pq~input\, carro_en_pq~input, ContadorenReversa, 1

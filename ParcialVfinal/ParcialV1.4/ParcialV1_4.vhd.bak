@@ -1,0 +1,33 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity ParcialV1_4 is 
+port(
+	Entrada : in std_logic_vector;
+	SalidaNum : out std_logic_vector(6 downto 0);
+	SalMinUNi	: out std_logic_vector(6 downto 0);
+	SalSegDec 	: out std_logic_vector(6 downto 0);
+	SalSegUni 	: out std_logic_vector(6 downto 0));
+end ParcialV1_4;
+
+Architecture FuncionaPorFavor of parcialV1_4 is
+	component ContadorenReversa 
+		port ( 
+			clk : in std_logic;
+		carro_en_pq : in std_logic;
+		ContadorenParq : out integer range 0 to 35;
+      Felicitacion : out std_logic );
+	end component;
+	component Parqueadero
+		port (
+			Clk	: in  std_logic;
+		Sigue : in std_logic;
+		Selargo: out std_logic;
+		Contador2 : out integer range 0 to 600;
+		RTCsegUni: out integer range 0 to 9;
+		RTCsegDec: out integer range 0 to 5;
+		RTCMin  : out integer range 0 to 9);
+	end component;
+	begin
+end FuncionaPorFavor;
